@@ -1,0 +1,123 @@
+﻿<Page x:Class="UserClientRecipeEstiGenauer.ChatMessages__page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UserClientRecipeEstiGenauer"
+      xmlns:wpfTool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+       xmlns:emoji="clr-namespace:Emoji.Wpf;assembly=Emoji.Wpf"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ChatMessages__page" Background="#FFDED5BF">
+    <Page.Resources>
+        <DrawingImage x:Key="MyImageSource" emoji:Image.Source="👻"/>
+    </Page.Resources>
+
+
+
+    <Grid FlowDirection="RightToLeft" Background="#FFDED5BF">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+
+        <Border x:Name="pageBorder" Grid.Row="0"  Grid.RowSpan="20"  Grid.Column="0" Grid.ColumnSpan="20" BorderBrush="#FF7A4928" BorderThickness="3" />
+
+        <Border x:Name="topBorder1"  Grid.Row="0"  Grid.RowSpan="2"  Grid.Column="0" Grid.ColumnSpan="20" Background="#FFF6F6F6" BorderBrush="#FF7A4928" BorderThickness="1.5"/>
+
+       
+        <Image  Source="/RecipeBookPictuers/WindowhomePage/A_Homepage/DarkBackground.png" Opacity="0.3"  Grid.Row="2"  Grid.RowSpan="16"  Grid.Column="0" Grid.ColumnSpan="20" Stretch="Fill" />
+
+        <ScrollViewer Grid.Row="2"  Grid.RowSpan="16"  Grid.Column="0" Grid.ColumnSpan="20">
+            <StackPanel x:Name="messagesStackPanel"   />
+        </ScrollViewer>
+        
+        <Button x:Name="favRecipeButton" Grid.Row="0"  Grid.RowSpan="2"  Grid.Column="18" Grid.ColumnSpan="2" Margin="4" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="favRecipeButton_Click">
+            <Image x:Name="favRecipeImage" Source="/RecipeBookPictuers/WindowhomePage/Recipe/LightHeart.png" />
+        </Button>
+
+        <Button x:Name="btn1" Click="btn1_Click"  Grid.Row="0"  Grid.RowSpan="2"  Grid.Column="0" Grid.ColumnSpan="2" Margin="5" Background="#FF7A4928" BorderBrush="#FF7A4928" Foreground="#FFDED5BF"/>
+
+        <StackPanel x:Name="ratingStackPanel"  FlowDirection="LeftToRight" Orientation="Horizontal" Grid.Row="0"  Grid.RowSpan="2"  Grid.Column="7" Grid.ColumnSpan="6"  Margin="3" >
+
+            <Button x:Name="star1Button" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="star1Button_Click">
+                <Image x:Name="star1Image" Source="RecipeBookPictuers/WindowhomePage/Recipe/lightStar.png"  />
+            </Button>
+            <Button x:Name="star2Button" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="star2Button_Click">
+                <Image x:Name="star2Image" Source="RecipeBookPictuers/WindowhomePage/Recipe/lightStar.png" />
+            </Button>
+            <Button x:Name="star3Button" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="star3Button_Click">
+                <Image x:Name="star3Image" Source="RecipeBookPictuers/WindowhomePage/Recipe/lightStar.png" />
+            </Button>
+            <Button x:Name="star4Button" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="star4Button_Click">
+                <Image x:Name="star4Image" Source="RecipeBookPictuers/WindowhomePage/Recipe/lightStar.png" />
+            </Button>
+            <Button x:Name="star5Button" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="star5Button_Click">
+                <Image x:Name="star5Image" Source="RecipeBookPictuers/WindowhomePage/Recipe/lightStar.png" />
+            </Button>
+
+        </StackPanel>
+
+
+        <Border x:Name="textBorder"  Grid.Row="18"  Grid.RowSpan="2"  Grid.Column="0" Grid.ColumnSpan="20" Background="#FFDED5BF" BorderBrush="#FF7A4928" BorderThickness="1.5"/>
+
+
+
+        <Button x:Name="sendMessageButton" Grid.Row="18"  Grid.RowSpan="2"  Grid.Column="18" Grid.ColumnSpan="2"  Click="sendMessageButton_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" HorizontalAlignment="Right" Width="74">
+            <Image Source="/RecipeBookPictuers/WindowhomePage/Recipe/SendIcon.png"  />
+        </Button>
+
+
+
+        <wpfTool:WatermarkTextBox x:Name="textTextBox" Watermark="הקלד הודעה כאן..."  Grid.Row="18"  Grid.RowSpan="2"  Grid.Column="0"  TextWrapping="Wrap" Grid.ColumnSpan="18"  Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Foreground="#FF7A4928" FontSize="14"   />
+
+        <Image x:Name="spaceForSendImage" Grid.Row="15"  Grid.RowSpan="3"  Grid.Column="0" Grid.ColumnSpan="3"/>
+
+
+        
+       
+    </Grid>
+</Page>

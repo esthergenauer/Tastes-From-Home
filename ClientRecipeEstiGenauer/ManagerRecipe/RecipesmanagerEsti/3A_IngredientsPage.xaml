@@ -1,0 +1,61 @@
+﻿<Page x:Class="RecipesmanagerEsti._3A_IngredientsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RecipesmanagerEsti"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="_3A_IngredientsPage">
+  
+
+    <Page.Background>
+        <ImageBrush  ImageSource="/pics/DarkBackground.png" Opacity="0.5"/>
+    </Page.Background>
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Button Grid.Row="2" Margin="30,20" MaxHeight="40" MaxWidth="200" FontSize="14" Grid.Column="0" Content="הוסף מרכיב" Click="Button_Click" Background="#FFDED5BF" BorderBrush="#FFDED5BF" Foreground="#FF7B4A29"></Button>
+
+        <ListView x:Name="ingredientlst1"   FlowDirection="RightToLeft" Grid.ColumnSpan="3" Grid.RowSpan="2" BorderBrush="#FF7B4A29" Foreground="#FF642C0D" IsSynchronizedWithCurrentItem="True" >
+            <ListView.View>
+                <GridView >
+
+                    <GridViewColumn Header="שם מרכיב"  Width="100" DisplayMemberBinding="{Binding ingredientName}"  />
+                    <GridViewColumn Header="מכיל גלוטן" Width="100" DisplayMemberBinding="{Binding containsGluten}"  />
+                    <GridViewColumn Header="מכיל שומשום" Width="100" DisplayMemberBinding="{Binding containsSesame}"  />
+                    <GridViewColumn Header="מכיל חלב" Width="100" DisplayMemberBinding="{Binding containsMilk}"  />
+                    <GridViewColumn Header="מכיל אגוזים" Width="100" DisplayMemberBinding="{Binding containsNuts}"  />
+                    <GridViewColumn Header="מכיל סוכר" Width="100" DisplayMemberBinding="{Binding containsSuger}"  />
+                    <GridViewColumn Header="מכיל סויה" Width="100" DisplayMemberBinding="{Binding containsSoy}"  />
+                    <GridViewColumn Header="מכיל ביצים" Width="100" DisplayMemberBinding="{Binding containsEggs}"  />
+
+                    <GridViewColumn  Width="150">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="עדכן"  Foreground="Blue" Click="Button_Click_2"   />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn  Width="150">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="deleatebutton" Content="מחק"  Foreground="Blue" Click="deleatebutton_Click"  />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Page>

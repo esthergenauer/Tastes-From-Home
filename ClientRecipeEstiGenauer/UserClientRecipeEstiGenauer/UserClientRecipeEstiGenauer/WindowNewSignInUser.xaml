@@ -1,0 +1,87 @@
+﻿<Window x:Class="UserClientRecipeEstiGenauer.WindowNewSignInUser"
+        
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserClientRecipeEstiGenauer"
+        xmlns:validation_rules="clr-namespace:UserClientRecipeEstiGenauer.ValidationRules"
+        xmlns:wpfTool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        mc:Ignorable="d"
+        Title="WindowNewSignInUser" Height="450" Width="800" WindowState="Maximized">
+    
+    <Grid FlowDirection="RightToLeft">
+        <!-- שכבה תחתונה: צבע רקע לבן -->
+        <Border Background="White" Grid.RowSpan="20" Grid.ColumnSpan="20"/>
+
+        <!-- שכבה עליונה: רקע עם תמונה -->
+        <Image Source="/RecipeBookPictuers/WindowhomePage/A_Homepage/DarkBackground.png" Stretch="Fill" Grid.RowSpan="20" Grid.ColumnSpan="20"/>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+
+            <Image Source="/RecipeBookPictuers/WindowNEWsignIn/BigFrame.png" Grid.Row="0" Grid.RowSpan="20" Grid.Column="0" Grid.ColumnSpan="20" />
+            <Image Source="/RecipeBookPictuers/WindowNEWsignIn/LogoRecipeBook.png"  Grid.Row="10" Grid.RowSpan="5" Grid.Column="10" Grid.ColumnSpan="5" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+            <wpfTool:WatermarkTextBox x:Name="NameTextBox" Watermark="הכנס שם משתמש..." Grid.Row="10" Grid.RowSpan="1" Grid.Column="5" Grid.ColumnSpan="5" TextChanged="NameButton_TextChanged" Background="#FFDED5BF" BorderBrush="#FF794827" Foreground="#FF794827" PreviewMouseDown="NameTextBox_PreviewMouseDown" LostFocus="NameTextBox_LostFocus" TextWrapping="Wrap" AcceptsReturn="True"/>
+            <wpfTool:WatermarkTextBox x:Name="PassCodeTextBox" Watermark="הכנס קוד..." Grid.Row="12" Grid.RowSpan="1" Grid.Column="5" Grid.ColumnSpan="5" TextChanged="PassCodeTextBox_TextChanged" Background="#FFDED5BF" BorderBrush="#FF7C4B2A" Foreground="#FF7C4B2A" PreviewMouseDown="PassCodeTextBox_PreviewMouseDown" LostFocus="PassCodeTextBox_LostFocus" Style="{StaticResource textBoxInError }" TextWrapping="Wrap" AcceptsReturn="True">
+                <Binding Path="userPasscode">
+                <Binding.ValidationRules>
+                    <validation_rules:PasswordValidation/>
+
+                </Binding.ValidationRules>
+            </Binding>
+                </wpfTool:WatermarkTextBox>
+            <wpfTool:WatermarkTextBox x:Name="EmailAddressTextBox"  TextWrapping="Wrap" AcceptsReturn="True" Watermark="הכנס כתובת דואר אלקטרוני..." Grid.Row="14" Grid.RowSpan="1" Grid.Column="5" Grid.ColumnSpan="5" TextChanged="EmailAddressTextBox_TextChanged" Background="#FFDED5BF" BorderBrush="#FF7C4B2A" Foreground="#FF7C4B2A" PreviewMouseDown="EmailAddressTextBox_PreviewMouseDown" LostFocus="EmailAddressTextBox_LostFocus" Style="{StaticResource textBoxInError }" />
+
+            <Button x:Name="EnterNewSignInButton" Content="המטבח של ראסל מחכה לך" Grid.Row="17" Grid.RowSpan="1" Grid.Column="4" Grid.ColumnSpan="12" BorderBrush="#FF7C4B2A" Foreground="#FF7C4B2A" Background="#FFDED5BF" FontWeight="Bold" FontSize="16" FontFamily="Arial Black" Click="EnterNewSignInButton_Click"/>
+            <TextBlock x:Name="welcomeTextBlock" Text="ברוכים הבאים לעולם הקולינרי שלנו! אתם במרחק של כמה קליקים בלבד מהצטרפות למסע עמוס הטעמים שלנו. התכונן לחקור עולם של מתכונים מעוררי תיאבון, הרפתקאות קולינריות והפתעות מענגות. הירשמו עכשיו כדי להתענג על המטבח שלנו!" Grid.Row="2" Grid.RowSpan="5" Grid.Column="4" Grid.ColumnSpan="12" FontFamily="Impact" FontSize="40" TextAlignment="Center" TextWrapping="Wrap" Foreground="#FF7C4B2A"/>
+            <Button Grid.Row="15" Grid.Column="15" Content="בטל" BorderBrush="#FF7C4B2A" Foreground="#FF7C4B2A" Background="#FFDED5BF"  FontSize="16" FontFamily="Arial Black" Height="21" VerticalAlignment="Top" Click="Button_Click" />
+
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,55 @@
+﻿<Page x:Class="RecipesmanagerEsti._3B_AddIngredientPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RecipesmanagerEsti"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="_3B_AddIngredientPage">
+
+    <Page.Background>
+        <ImageBrush  ImageSource="/pics/DarkBackground.png" Opacity="0.5"/>
+    </Page.Background>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="aStackPanel" Grid.Column="2" Grid.ColumnSpan="1" Grid.Row="2" Grid.RowSpan="2" >
+            <CheckBox x:Name="glutanCheckBox" Content="מכיל גלוטן"  Foreground="#FF884A29" BorderBrush="#FF884A29"   IsChecked="{Binding containsGluten}" />
+            <CheckBox x:Name="sesameCheckBox" Content="מכיל שומשום" Foreground="#FF884A29" BorderBrush="#FF884A29" IsChecked="{Binding containsSesame}" />
+            <CheckBox x:Name="milkCheckBox"   Content="מכיל חלב" Foreground="#FF884A29" BorderBrush="#FF884A29" IsChecked="{Binding containsMilk}" />
+            <CheckBox x:Name="nutsCheckBox"   Content="מכיל בוטנים ואגוזים" Foreground="#FF884A29" BorderBrush="#FF884A29" IsChecked="{Binding containsNuts}" />
+            <CheckBox x:Name="sugarCheckBox"  Content="מכיל סוכר" Foreground="#FF884A29" BorderBrush="#FF884A29" IsChecked="{Binding containsSuger}"/>
+            <CheckBox x:Name="soyCheckBox"    Content="מכיל סויה" Foreground="#FF884A29" BorderBrush="#FF884A29" IsChecked="{Binding containsSoy}"/>
+            <CheckBox x:Name="eggsCheckBox"   Content="מכיל ביצים" Foreground="#FF884A29" BorderBrush="#FF884A29" IsChecked="{Binding containsEggs}" />
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" >
+            <TextBlock x:Name="UpdateNameTextBlack" Text=":שם מרכיב    "  Foreground="#FF8F4B28" TextAlignment="Right"    />
+            <TextBox x:Name="NameTextBox"  HorizontalAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Center" Background="#FFDED5BF" Foreground="#FF7B4A29" SelectionBrush="#FF7B4A29" BorderBrush="#FF884A29" Text= "{Binding ingredientName}"   Width="247"   />
+        </StackPanel>
+
+        <Button x:Name="addButton" Margin="3" Content="הוסף" Grid.Column="0" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Grid.Row="5" VerticalAlignment="Center" Click="Button_Click" Background="#FFDED5BF" Foreground="#FF884A29" BorderBrush="#FF884A29"/>
+        <Button x:Name="cancle" Margin="3" Content="בטל" Grid.Column="5" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Grid.Row="5" VerticalAlignment="Center" Click="Button_Click1" Background="#FFDED5BF" Foreground="#FF884A29" BorderBrush="#FF884A29"/>
+
+
+    </Grid>
+</Page>
+

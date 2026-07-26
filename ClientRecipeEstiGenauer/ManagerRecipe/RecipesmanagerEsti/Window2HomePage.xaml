@@ -1,0 +1,34 @@
+﻿<Window x:Class="RecipesmanagerEsti.Window2HomePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RecipesmanagerEsti"
+        xmlns:HamburgerMenu="clr-namespace:HamburgerMenu;assembly=HamburgerMenu"
+        mc:Ignorable="d"
+        Title="Window2HomePage" Height="450" Width="800" WindowState="Maximized">
+
+
+        <Grid FlowDirection="RightToLeft" >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="9*" />
+            </Grid.ColumnDefinitions>
+
+            <Frame x:Name="frm1" Grid.Column="1"/>
+
+            <HamburgerMenu:HamburgerMenu Background="White" MenuIconColor="#FF884A29" SelectionIndicatorColor="White" MenuItemForeground="#FF884A29" HorizontalAlignment="Left"  Foreground="#FF884A29" >
+
+            <HamburgerMenu:HamburgerMenuItem x:Name="Homepage"    Text="דף הבית"  Icon="/pics/IconHomePage.png"  Height="50"  Selected="Homepage_Selected" />
+
+            <HamburgerMenu:HamburgerMenuItem x:Name="messages"    Text="הודעות"   Icon="/pics/1mes.png"     Height="50"     Selected="messages_Selected"/>
+
+            <HamburgerMenu:HamburgerMenuItem x:Name="ingredients" Text="מרכיבים"  Icon="/pics/1ing.png"    Height="50"      Selected="ingredients_Selected" />
+
+               <HamburgerMenu:HamburgerMenuItem x:Name="units"       Text="מידות"     Icon="/pics/1size.png"    Height="50"    Selected="units_Selected"  />
+                
+             </HamburgerMenu:HamburgerMenu>
+
+        </Grid>
+</Window>

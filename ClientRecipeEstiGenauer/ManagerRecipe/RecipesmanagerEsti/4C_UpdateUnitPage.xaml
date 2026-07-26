@@ -1,0 +1,42 @@
+﻿<Page x:Class="RecipesmanagerEsti._4C_UpdateUnitPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RecipesmanagerEsti"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="_4C_UpdateUnitPage">
+
+    <Page.Background>
+        <ImageBrush  ImageSource="/pics/DarkBackground.png" Opacity="0.5"/>
+    </Page.Background>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" >
+            <TextBlock x:Name="UpdateNameTextBlack" Text=":שם יחידת מידה"  Foreground="#FF8F4B28" TextAlignment="Right"    />
+            <TextBox x:Name="UpdateNameTextBox"  HorizontalAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Center" Background="#FFDED5BF" Foreground="#FF7B4A29" SelectionBrush="#FF7B4A29" BorderBrush="#FF884A29" Text= "{Binding nameYechidot}"     />
+        </StackPanel>
+        <Button x:Name="addButton" Margin="3" Content="עדכן" Grid.Column="0" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Grid.Row="5" VerticalAlignment="Center" Click="Button_Click" Background="#FFDED5BF" Foreground="#FF884A29" BorderBrush="#FF884A29"/>
+        <Button x:Name="cancle" Margin="3" Content="בטל" Grid.Column="5" Grid.ColumnSpan="1" HorizontalAlignment="Stretch"  Grid.Row="5" VerticalAlignment="Center" Click="Button_Click1" Background="#FFDED5BF" Foreground="#FF884A29" BorderBrush="#FF884A29"/>
+
+    </Grid>
+</Page>

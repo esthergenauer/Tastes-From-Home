@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="WebUser">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="userCode" type="xs:int" />
+          <xs:element minOccurs="0" name="userEmail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="userPasscode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="userStatus" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WebUser" nillable="true" type="tns:WebUser" />
+  <xs:complexType name="BaseEntity">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="BaseEntity" nillable="true" type="tns:BaseEntity" />
+  <xs:complexType name="Folder">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="folderCode" type="xs:int" />
+          <xs:element minOccurs="0" name="folderName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="folderPicture" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Folder" nillable="true" type="tns:Folder" />
+  <xs:complexType name="ArrayOfRecipes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Recipes" nillable="true" type="tns:Recipes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRecipes" nillable="true" type="tns:ArrayOfRecipes" />
+  <xs:complexType name="Recipes">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="folderCode" nillable="true" type="tns:Folder" />
+          <xs:element minOccurs="0" name="recipeCode" type="xs:int" />
+          <xs:element minOccurs="0" name="recipeComments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="recipeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="recipeDifficulty" type="xs:int" />
+          <xs:element minOccurs="0" name="recipeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="recipeNotes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="recipePicture" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="recipePreparation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="recipePreparationTime" type="xs:int" />
+          <xs:element minOccurs="0" name="recipeSarvingAmount" type="xs:int" />
+          <xs:element minOccurs="0" name="recipeStatus" type="xs:boolean" />
+          <xs:element minOccurs="0" name="userCode" nillable="true" type="tns:WebUser" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Recipes" nillable="true" type="tns:Recipes" />
+  <xs:complexType name="ArrayOfRecipeIngredient">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RecipeIngredient" nillable="true" type="tns:RecipeIngredient" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRecipeIngredient" nillable="true" type="tns:ArrayOfRecipeIngredient" />
+  <xs:complexType name="RecipeIngredient">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codeYechidot" nillable="true" type="tns:Yechidot" />
+          <xs:element minOccurs="0" name="ingredientCode" nillable="true" type="tns:Ingredients" />
+          <xs:element minOccurs="0" name="ingredientamount" type="xs:double" />
+          <xs:element minOccurs="0" name="recipeCode" nillable="true" type="tns:Recipes" />
+          <xs:element minOccurs="0" name="recipeIngredientCode" type="xs:int" />
+          <xs:element minOccurs="0" name="recipeIngredientStatus" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RecipeIngredient" nillable="true" type="tns:RecipeIngredient" />
+  <xs:complexType name="Yechidot">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codeYechidot" type="xs:int" />
+          <xs:element minOccurs="0" name="nameYechidot" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="statusYechidot" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Yechidot" nillable="true" type="tns:Yechidot" />
+  <xs:complexType name="Ingredients">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="containsEggs" type="xs:boolean" />
+          <xs:element minOccurs="0" name="containsGluten" type="xs:boolean" />
+          <xs:element minOccurs="0" name="containsMilk" type="xs:boolean" />
+          <xs:element minOccurs="0" name="containsNuts" type="xs:boolean" />
+          <xs:element minOccurs="0" name="containsSesame" type="xs:boolean" />
+          <xs:element minOccurs="0" name="containsSoy" type="xs:boolean" />
+          <xs:element minOccurs="0" name="containsSuger" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ingredientName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ingredientsCode" type="xs:int" />
+          <xs:element minOccurs="0" name="ingredientsStatus" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Ingredients" nillable="true" type="tns:Ingredients" />
+  <xs:complexType name="ArrayOfIngredients">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Ingredients" nillable="true" type="tns:Ingredients" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIngredients" nillable="true" type="tns:ArrayOfIngredients" />
+  <xs:complexType name="ArrayOfWebUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WebUser" nillable="true" type="tns:WebUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWebUser" nillable="true" type="tns:ArrayOfWebUser" />
+  <xs:complexType name="ArrayOfYechidot">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Yechidot" nillable="true" type="tns:Yechidot" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfYechidot" nillable="true" type="tns:ArrayOfYechidot" />
+  <xs:complexType name="ArrayOfFolder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Folder" nillable="true" type="tns:Folder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFolder" nillable="true" type="tns:ArrayOfFolder" />
+  <xs:complexType name="FavoriteRecipes">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="favRecipeCode" type="xs:int" />
+          <xs:element minOccurs="0" name="favRecipeStatus" type="xs:boolean" />
+          <xs:element minOccurs="0" name="recipeCode" nillable="true" type="tns:Recipes" />
+          <xs:element minOccurs="0" name="userCode" nillable="true" type="tns:WebUser" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FavoriteRecipes" nillable="true" type="tns:FavoriteRecipes" />
+  <xs:complexType name="ArrayOfFavoriteRecipes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FavoriteRecipes" nillable="true" type="tns:FavoriteRecipes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFavoriteRecipes" nillable="true" type="tns:ArrayOfFavoriteRecipes" />
+  <xs:complexType name="Rating">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="rateValue" type="xs:int" />
+          <xs:element minOccurs="0" name="ratingCode" type="xs:int" />
+          <xs:element minOccurs="0" name="ratingStatus" type="xs:boolean" />
+          <xs:element minOccurs="0" name="recipeCode" nillable="true" type="tns:Recipes" />
+          <xs:element minOccurs="0" name="userCode" nillable="true" type="tns:WebUser" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Rating" nillable="true" type="tns:Rating" />
+  <xs:complexType name="ArrayOfRating">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Rating" nillable="true" type="tns:Rating" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRating" nillable="true" type="tns:ArrayOfRating" />
+  <xs:complexType name="RecipeMessages">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="messageCode" type="xs:int" />
+          <xs:element minOccurs="0" name="messageStatus" type="xs:boolean" />
+          <xs:element minOccurs="0" name="messagesText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="recipeCode" nillable="true" type="tns:Recipes" />
+          <xs:element minOccurs="0" name="userCode" nillable="true" type="tns:WebUser" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RecipeMessages" nillable="true" type="tns:RecipeMessages" />
+  <xs:complexType name="ArrayOfRecipeMessages">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RecipeMessages" nillable="true" type="tns:RecipeMessages" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRecipeMessages" nillable="true" type="tns:ArrayOfRecipeMessages" />
+</xs:schema>

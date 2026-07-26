@@ -1,0 +1,48 @@
+﻿<Window x:Class="UserClientRecipeEstiGenauer.WindowHomePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserClientRecipeEstiGenauer"
+        xmlns:HamburgerMenu="clr-namespace:HamburgerMenu;assembly=HamburgerMenu"
+        mc:Ignorable="d"
+        Title="WindowHomePage" Height="450" Width="800" Foreground="#FFB68A5E" WindowState="Maximized">
+
+    <Grid FlowDirection="RightToLeft" >
+
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="9*" />
+
+        </Grid.ColumnDefinitions>
+
+
+
+        <Frame x:Name="frm1" Grid.Column="1"/>
+
+
+
+        <HamburgerMenu:HamburgerMenu Background="White" MenuIconColor="#FF884A29" SelectionIndicatorColor="White" MenuItemForeground="#FF884A29" HorizontalAlignment="Left"  Foreground="#FF884A29" >
+
+            <HamburgerMenu:HamburgerMenuItem x:Name="Homepage"  Text="דף הבית" Selected="Homepage_Selected" Icon="/RecipeBookPictuers/WindowhomePage/A_Homepage/IconHomePage.png " />
+
+            <HamburgerMenu:HamburgerMenuItem x:Name="AccountSettings"  Text="הגדרות אישיות"  SelectionCommand="{Binding ElementName=this_}" Selected="AccountSettings_Selected" Icon="/RecipeBookPictuers/WindowhomePage/B_AccountSettings/IconAccountSettings.png"/>
+
+            <HamburgerMenu:HamburgerMenuItem x:Name="AllRecipes"  Text="כל המתכונים" Selected="AllRecipes_Selected"  Icon="/RecipeBookPictuers/WindowhomePage/C_AllRecipes/IconAllRecipes.png" />
+
+            <HamburgerMenu:HamburgerMenuItem x:Name="FavoriteRecipes"  Text="מתכונים מועדפים" Selected="FavoriteRecipes_Selected" Icon="/RecipeBookPictuers/WindowhomePage/D_FavriteRecipes/IconFavriteRecipes.png" />
+
+            <HamburgerMenu:HamburgerMenuItem x:Name="MyRecipes" Text="המתכונים שלי " Selected="MyRecipes_Selected" Icon="/RecipeBookPictuers/WindowhomePage/E_MyRecipes/IconMyRecipes.png" />
+
+            <HamburgerMenu:HamburgerMenuItem x:Name="NewMessages" Text="הודעות חדשות " Selected="NewMessages_Selected" Icon="/RecipeBookPictuers/WindowhomePage/F_NewMessages/IconNewMessages.png"/>
+
+            <HamburgerMenu:HamburgerMenuItem x:Name="AddNewRecipe" Text="הוסף מתכון חדש "  Icon="/RecipeBookPictuers/WindowhomePage/G_AddNewRecipe/IconAddRecipe.png" Selected="AddNewRecipe_Selected_1" />
+
+        </HamburgerMenu:HamburgerMenu>
+
+
+
+    </Grid>
+
+</Window>
